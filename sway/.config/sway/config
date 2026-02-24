@@ -1,13 +1,10 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -19,33 +16,27 @@ set $right l
 set $term kitty
 
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# Recommends: rofi-wayland
 set $rofi_cmd rofi \
         -terminal '$term'
-# Shows a combined list of the applications with desktop files and
-# executables from PATH.
-# TODO: add window with the next release of rofi-wayland
 set $menu $rofi_cmd -show drun
 
+
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 output * bg #14141E solid_color
 #output * bg ~/Pictures/wallpaper0.png fill
-#
-# Example configuration:
-#
-#output Virtual-1 resolution 1920x1080
-#
+
+output Virtual-1 resolution 1920x1080
+output eDP-1 resolution 1920x1080
+
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+
 ### Idle configuration
-#
+
 # Example configuration:
-#
+
 
 #exec_always --no-startup-id swayidle \
 #    timeout 300 'swaylock -i ~/Pictures/wallpaper0.png' \
@@ -61,6 +52,7 @@ output * bg #14141E solid_color
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+
 ### Input configuration
 
 input type:keyboard {
@@ -71,14 +63,15 @@ input type:touchpad {
 	natural_scroll enabled
 }
 
-#
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+
 ### Key bindings
-#
+
 # Basics:
-#
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -102,9 +95,9 @@ input type:touchpad {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 
-#
+
 # Moving around:
-#
+
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -126,9 +119,9 @@ input type:touchpad {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
-#
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -153,9 +146,9 @@ input type:touchpad {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-#
+
 # Layout stuff:
-#
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -187,9 +180,9 @@ input type:touchpad {
     client.unfocused   #96969650 #96969650 #96969650 #96969650 $clear
     client.focused     #969696 #969696 #969696 #969696 #969696
 
-#
+
 # Scratchpad:
-#
+
     # Sway has a "scratchpad", which is a bag of holding for windows.
     # You can send windows there and get them back later.
 
@@ -199,9 +192,9 @@ input type:touchpad {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
+
 # Resizing containers:
-#
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -238,9 +231,6 @@ bindsym $mod+r mode "resize"
 # (/etc) or per-user ($XDG_CONFIG_HOME) basis. Just create the file you
 # want to modify/override in the higher-level directory.
 #
-# For example, to disable the default bar from Fedora configs, you'll need to
-#     $ echo -n > "$HOME/.config/sway/config.d/90-bar.conf"
-#
 # Note the quoting, the $() and the arguments quoting. All the parts are equally
 # important to make the magic work. And if you want to learn the secret behind
 # the trick, it's all in the `wordexp(3)`.
@@ -248,9 +238,11 @@ bindsym $mod+r mode "resize"
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 
-# Autostart apps/scripts
+### Autostart apps/scripts
+
 exec waybar
 
 
-# Window-specific config
+### Window-specific config
+
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
