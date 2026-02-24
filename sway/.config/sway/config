@@ -24,8 +24,8 @@ set $menu $rofi_cmd -show drun
 ### Output configuration
 
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg #14141E solid_color
-#output * bg ~/Pictures/wallpaper0.png fill
+#output * bg #14141E solid_color
+output * bg ~/.config/sway/wallpaper0.png fill
 
 output Virtual-1 resolution 1920x1080
 output eDP-1 resolution 1920x1080
