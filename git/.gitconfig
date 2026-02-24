@@ -1,0 +1,7 @@
+[user]
+	name = Cowmuncher
+	email = cowmuncher@protonmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
