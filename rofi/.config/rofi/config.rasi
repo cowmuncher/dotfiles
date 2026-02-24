@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun,window";
+    show-icons: false;
+    terminal: "kitty";
+    font: "Input Mono 13";
+    drun-display-format: "{name}";
+    show-modi: false;
+}
+
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

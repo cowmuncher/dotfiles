@@ -1,0 +1,60 @@
+* {
+    font-family: 'Input Mono', monospace;
+    font-size: 15px;
+}
+
+window#waybar {
+    color: rgb(150, 150, 150);
+    background-color: transparent;
+}
+
+
+#waybar > box {
+    background-color: rgb(35, 35, 45);
+    margin: 0px 200px 0px 200px;
+    border-radius: 20px;
+    ;
+}
+
+#workspaces button {
+    all: unset;	
+    padding: 0 9px 0 18px;
+    margin: 12px 0 12px 10px;
+    background-color: #14141E;
+    border-radius: 10px;
+}
+
+#workspaces button.focused {
+    background-color: rgb(150, 150, 150);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#workspaces,
+#mode,
+#custom-wireguard {
+   margin-left: 20px;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-media,
+#mpd {
+    padding: 12px 12px;
+    margin-right: 20px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+

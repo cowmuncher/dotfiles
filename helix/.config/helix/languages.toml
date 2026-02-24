@@ -1,0 +1,13 @@
+[Language.c]
+language-server = "clangd"
+# Enable line numbers and relative numbers
+line-numbers = true
+relative-line-numbers = true
+
+# Enable truecolor (if your terminal supports it)
+#colors = "gruvbox-dark"
+
+# Tab settings for C
+tab-width = 4
+soft-tabs = true
+
