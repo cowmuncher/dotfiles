@@ -94,6 +94,10 @@ input type:touchpad {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+# Volume controls (Pipewire):
+    bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.2 @DEFAULT_AUDIO_SINK@ 5%+
+    bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 
 # Moving around:
