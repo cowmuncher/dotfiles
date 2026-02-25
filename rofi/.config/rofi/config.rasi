@@ -7,4 +7,6 @@ configuration {
     show-modi: false;
 }
 
-@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
