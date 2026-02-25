@@ -19,7 +19,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Source Sans Pro 10
+    font = Source Sans Pro 12
     line_height = 0
     markup = full
     format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
