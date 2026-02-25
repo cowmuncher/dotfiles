@@ -247,6 +247,13 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 exec waybar
 exec dunst
 
+
 ### Window-specific config
 
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+
+
+### Freedesktop portal support
+
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DESKTOP_SESSION
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DESKTOP_SESSION
