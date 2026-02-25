@@ -4,6 +4,7 @@ fastfetch
 firefox
 fish
 gnome-keyring
+helix
 kitty
 ncurses
 ncspot
