@@ -1,3 +1,6 @@
+notify = true
+shuffle = true
+
 [theme]
 background = "#1a1b26cc"
 primary = "#9aa5ce"
