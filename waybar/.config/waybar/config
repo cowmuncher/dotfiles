@@ -1,6 +1,9 @@
 // -*- mode: jsonc -*-
 {
-
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    
     // Modules placement
     "modules-left": [
         "sway/workspaces",
