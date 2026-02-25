@@ -1,5 +1,6 @@
 clang
 discord
+dunst
 fastfetch
 firefox
 fish
