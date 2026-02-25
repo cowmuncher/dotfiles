@@ -23,6 +23,7 @@ swayidle
 swaylock
 tailscale
 thunar
+ttf-input
 waybar
 wireguard-tools
 xdg-desktop-portal
