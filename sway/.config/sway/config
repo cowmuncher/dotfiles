@@ -245,7 +245,7 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 ### Autostart apps/scripts
 
 exec waybar
-
+exec dunst
 
 ### Window-specific config
 
