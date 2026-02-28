@@ -39,9 +39,7 @@
 #clock,
 #battery,
 #network,
-#pulseaudio,
-#custom-media,
-#mpd {
+#pulseaudio {
     padding: 12px 12px;
     margin-right: 20px;
 }

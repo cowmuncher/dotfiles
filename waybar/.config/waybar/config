@@ -55,8 +55,6 @@
         "format-full": "BAT: {capacity}%",
         "format-charging": "BAT: {capacity}%",
         "format-plugged": "BAT: {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         "format-wifi": "WiFi: {essid}",
@@ -73,8 +71,8 @@
         "format-muted": "VOL: 0%",
         "format-source": "",
         "format-source-muted": "",
-	"tooltip": false,
-        "on-click": "pavucontrol"
+    	"tooltip": false,
+        "on-click": "pavucontrol",
     },
 }
 
