@@ -91,6 +91,9 @@ input type:touchpad {
     bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
     bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
+# Brightness controls (Brightnessctl)
+    bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+    bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Moving around:
 
@@ -178,9 +181,6 @@ input type:touchpad {
 
 
 # Scratchpad:
-
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad

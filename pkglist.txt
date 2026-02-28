@@ -27,6 +27,7 @@ tailscale
 thunar
 ttf-input
 waybar
+wev
 wireguard-tools
 xdg-desktop-portal
 xdg-desktop-portal-gtk
