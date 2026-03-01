@@ -1,3 +1,4 @@
+btop
 clang
 discord
 dunst
