@@ -1,6 +1,6 @@
 * {
     font-family: 'Input Mono', monospace;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #waybar {
@@ -11,13 +11,13 @@
 #waybar > box {
     background-color: rgb(35, 35, 45);
     margin: 0px 200px 0px 200px;
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 0px 0px 25px 25px;
 }
 
 #workspaces button {
     all: unset;	
     padding: 0 9px 0 18px;
-    margin: 12px 0 12px 10px;
+    margin: 10px 0 10px 10px;
     background-color: #14141E;
     border-radius: 10px;
 }
@@ -39,7 +39,7 @@
 #battery,
 #network,
 #pulseaudio {
-    padding: 12px 12px;
+    padding: 10px 12px;
     margin-right: 20px;
 }
 
