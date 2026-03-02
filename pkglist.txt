@@ -1,14 +1,16 @@
+blueman
+brightnessctl
 btop
 clang
 discord
 dunst
 fastfetch
-firefox
 fish
 gnome-keyring
 helix
 hyprland
 kitty
+lxqt-policykit-agent
 ncurses
 ncspot
 neovim
