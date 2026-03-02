@@ -9,7 +9,7 @@
 }
 
 #waybar > box {
-    background-color: rgb(35, 35, 45);
+    background-color: rgb(28, 30, 40);
     margin: 0px 200px 0px 200px;
     border-radius: 0px 0px 25px 25px;
 }
@@ -18,7 +18,7 @@
     all: unset;	
     padding: 0 9px 0 18px;
     margin: 10px 0 10px 10px;
-    background-color: #14141E;
+    background-color: rgb(18, 20, 30);
     border-radius: 10px;
 }
 
