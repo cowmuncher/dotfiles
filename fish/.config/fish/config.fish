@@ -5,4 +5,4 @@ end
 # Alias helix on Arch
 alias hx="helix"
 
-alias swag="bash ~/Scripts/sway-run.sh"
+alias swag="start-hyprland"

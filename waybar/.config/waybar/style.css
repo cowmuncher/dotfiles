@@ -22,7 +22,7 @@
     border-radius: 10px;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: rgb(150, 150, 150);
 }
 
@@ -31,7 +31,6 @@
 }
 
 #workspaces,
-#mode,
 #custom-wireguard {
    margin-left: 20px;
 }

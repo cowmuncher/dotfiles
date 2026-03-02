@@ -7,6 +7,7 @@ firefox
 fish
 gnome-keyring
 helix
+hyprland
 kitty
 ncurses
 ncspot
@@ -20,7 +21,6 @@ ranger
 rofi
 signal-desktop
 smartmontools
-sway
 swaybg
 swayidle
 swaylock
@@ -31,7 +31,6 @@ waybar
 wev
 wireguard-tools
 xdg-desktop-portal
-xdg-desktop-portal-gtk
-xdg-desktop-portal-wlr
+xdg-desktop-portal-hyprland
 xorg-xwayland
 zathura
