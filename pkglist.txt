@@ -7,6 +7,7 @@ dunst
 fastfetch
 fish
 gnome-keyring
+grim
 helix
 hyprland
 kitty
