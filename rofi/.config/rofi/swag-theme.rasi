@@ -1,6 +1,6 @@
 * {
-    selected-normal-foreground:  rgb ( 0, 150, 0 );
-    foreground:                  rgb ( 0, 255, 0 );
+    selected-normal-foreground:  rgb ( 100, 100, 100 );
+    foreground:                  rgb ( 200, 200, 200 );
     normal-foreground:           @foreground;
     alternate-normal-background: @background;
     selected-urgent-foreground:  @selected-normal-foreground;
@@ -20,7 +20,7 @@
     urgent-background:           @background;
     selected-urgent-background:  @background;
     alternate-urgent-foreground: @foreground;
-    background-color:            rgba ( 0, 0, 0, 0.7 );
+    background-color:            rgba ( 0, 0, 0, 0.8 );
     alternate-active-foreground: @foreground;
     active-background:           @background;
     selected-active-background:  @background;
@@ -64,7 +64,7 @@ element {
     border:  0;
     padding: 0;
     background-color: @background;
-    padding: 0 0 0 0.75em;
+    padding: 0 0 0 0.9em;
 }
 element-text {
     background-color: inherit;

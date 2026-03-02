@@ -29,6 +29,7 @@ swaylock
 tailscale
 thunar
 ttf-input
+ttf-jetbrains-mono
 waybar
 wev
 wireguard-tools

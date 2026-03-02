@@ -2,7 +2,7 @@ configuration {
     modi: "drun,window";
     show-icons: false;
     terminal: "kitty";
-    font: "JetBrains Mono 35";
+    font: "Perfect DOS VGA 437 35";
     drun-display-format: "{name}";
     show-modi: false;
 }
