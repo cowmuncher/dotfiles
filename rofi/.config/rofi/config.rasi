@@ -2,11 +2,9 @@ configuration {
     modi: "drun,window";
     show-icons: false;
     terminal: "kitty";
-    font: "Input Mono 13";
+    font: "JetBrains Mono 35";
     drun-display-format: "{name}";
     show-modi: false;
 }
 
-//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
-
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "~/.config/rofi/swag-theme.rasi"

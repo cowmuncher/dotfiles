@@ -1,0 +1,133 @@
+* {
+    selected-normal-foreground:  rgb ( 0, 150, 0 );
+    foreground:                  rgb ( 0, 255, 0 );
+    normal-foreground:           @foreground;
+    alternate-normal-background: @background;
+    selected-urgent-foreground:  @selected-normal-foreground;
+    urgent-foreground:           @foreground;
+    alternate-urgent-background: @background;
+    active-foreground:           @foreground;
+    lightbg:                     @background;
+    selected-active-foreground:  @selected-normal-foreground;
+    alternate-active-background: @background;
+    background:                  rgba ( 0, 0, 0, 0 );
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    lightfg:                     @background;
+    selected-normal-background:  @background;
+    border-color:                @background;
+    separatorcolor:              @background;
+    urgent-background:           @background;
+    selected-urgent-background:  @background;
+    alternate-urgent-foreground: @foreground;
+    background-color:            rgba ( 0, 0, 0, 0.7 );
+    alternate-active-foreground: @foreground;
+    active-background:           @background;
+    selected-active-background:  @background;
+}
+window {
+    background-color: @background-color;
+    border:           0;
+    padding:          0;
+    fullscreen:       true;
+    location:         center;
+    anchor:           center;
+}
+mainbox {
+    border:       0;
+    orientation: vertical;
+    expand: true;
+    background-color: @background;
+    padding: 30% 0 0 35%;
+}
+message {
+    border:       0;
+    border-color: @separatorcolor;
+    padding:      0;
+    background-color: @background;
+}
+textbox {
+    text-color: @foreground;
+    background-color: @background;
+}
+listview {
+    fixed-height: 0;
+    expand:       false;
+    border:       0;
+    lines:        5;
+    border-color: @separatorcolor;
+    scrollbar:    false;
+    padding:      0;
+    background-color: @background;
+}
+element {
+    border:  0;
+    padding: 0;
+    background-color: @background;
+    padding: 0 0 0 0.75em;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    highlight: none;
+}
+element.normal.normal {
+    text-color:       @foreground;
+}
+element.selected.normal {
+    text-color:       @selected-normal-foreground;
+}
+element.alternate.normal {
+    text-color:       @foreground;
+}
+scrollbar {
+}
+mode-switcher {
+    border:     0 ;
+    border-color: @background;
+}
+button {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+button.selected {
+    text-color: @selected-normal-foreground;
+}
+inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    0;
+    background-color: @background;
+    border:     0;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+entry {
+    spacing:    0;
+    text-color: @foreground;
+    border:     0;
+    background-color: @background;
+    cursor-width: 0.5em;
+}
+prompt {
+    spacing:    0;
+    text-color: @foreground;
+    border:     0;
+    background-color: @background;
+    enabled: false;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ">";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
+    background-color: @background;
+}
+

@@ -10,7 +10,7 @@ gnome-keyring
 helix
 hyprland
 kitty
-lxqt-policykit-agent
+lxqt-policykit
 ncurses
 ncspot
 neovim
