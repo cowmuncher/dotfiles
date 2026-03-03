@@ -19,3 +19,6 @@ statusbar_bg = "#1a1b26"
 cmdline = "#c0caf5"
 cmdline_bg = "#24283b"
 search_match = "#f7768e"
+
+[configuration]
+hide_display_names = true
