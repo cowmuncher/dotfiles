@@ -1,6 +1,7 @@
 blueman
 brightnessctl
 btop
+cava
 clang
 discord
 dunst
@@ -26,6 +27,7 @@ signal-desktop
 smartmontools
 swaybg
 swayidle
+swayimg
 swaylock
 tailscale
 thunar
