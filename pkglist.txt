@@ -26,6 +26,7 @@ rofi
 signal-desktop
 slurp
 smartmontools
+steam
 swaybg
 swayidle
 swayimg
