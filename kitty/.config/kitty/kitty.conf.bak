@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# spaceduck
+# Front End Delight
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -2931,11 +2931,11 @@ background_opacity 0.8
 
 #: }}}
 
+window_padding_width 5
 
 # BEGIN_KITTY_FONTS
-font_family      family="Perfect DOS VGA 437"
+font_family      family="JetBrains Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-font_size        12
 # END_KITTY_FONTS
