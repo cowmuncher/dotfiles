@@ -5,3 +5,5 @@ end
 alias fuck="nvim"
 
 alias swag="start-hyprland"
+
+alias nigga="sudo shutdown now"
