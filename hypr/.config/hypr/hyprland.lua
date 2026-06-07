@@ -25,6 +25,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
   hl.exec_cmd("sleep 0.5 && kitty --class cava -e cava")
   hl.exec_cmd("sleep 0.5 && swayimg --class slideshow --slideshow ~/dotfiles/hypr/.config/hypr/slideshow/")
+  hl.exec_cmd("sleep 0.5 && btop --class btop")
 end)
 
 
@@ -185,6 +186,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 hl.bind("SHIFT + CTRL + S", hl.dsp.exec_cmd("~/Scripts/screenshot.sh"))
 
+hl.bind(mainMod .. " + onehalf", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 -- WINDOWS AND WORKSPACES --
 
@@ -246,8 +248,8 @@ hl.window_rule({
   match       = { class = "ncspot" },
   workspace   = 1,
   float       = true,
-  size        = "monitor_w*0.45 monitor_h*0.40",
-  move        = "monitor_w/40 monitor_h/10",
+  size        = "monitor_w*0.46 monitor_h*0.40",
+  move        = "monitor_w/40 monitor_h/15",
 })
 
 hl.window_rule({
@@ -255,8 +257,8 @@ hl.window_rule({
   match       = { class = "cava" },
   workspace   = 1,
   float       = true,
-  size        = "monitor_w*0.35 monitor_h*0.35",
-  move        = "monitor_w/40 monitor_h*0.6",
+  size        = "monitor_w*0.46 monitor_h*0.40",
+  move        = "monitor_w*0.51 monitor_h/15",
 })
 
 hl.window_rule({
@@ -264,8 +266,17 @@ hl.window_rule({
   match       = { class = "slideshow" },
   workspace   = 1,
   float       = true,
-  size        = "monitor_w*0.4 monitor_h*0.4",
-  move        = "monitor_w*0.55 monitor_h*0.55",
+  size        = "monitor_w*0.46 monitor_h*0.46",
+  move        = "monitor_w*0.51 monitor_h*0.50",
+})
+
+hl.window_rule({
+  name        = "btop",
+  match       = { class = "btop" },
+  workspace   = 1,
+  float       = true,
+  size        = "monitor_w*0.46 monitor_h*0.46",
+  move        = "monitor_w/40 monitor_h*0.50",
 })
 
 hl.window_rule({
