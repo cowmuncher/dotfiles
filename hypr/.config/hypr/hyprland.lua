@@ -25,7 +25,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
   hl.exec_cmd("sleep 0.5 && kitty --class cava -e cava")
   hl.exec_cmd("sleep 0.5 && swayimg --class slideshow --slideshow ~/dotfiles/hypr/.config/hypr/slideshow/")
-  hl.exec_cmd("sleep 0.5 && btop --class btop")
+  hl.exec_cmd("sleep 0.5 && kitty --class btop -e btop")
 end)
 
 
