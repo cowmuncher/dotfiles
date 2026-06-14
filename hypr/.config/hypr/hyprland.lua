@@ -19,7 +19,7 @@ local menu        = "rofi -show drun"
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
-  hl.exec_cmd("swaybg -i ~/.config/hypr/wallpaper1.png -m fill")
+  --hl.exec_cmd("swaybg -i ~/.config/hypr/wallpaper1.png -m fill")
   hl.exec_cmd("lxqt-policykit-agent")
   hl.exec_cmd("swayidle -w timeout 300 'swaylock -f -i ~/.config/hypr/wallpaper1.png --indicator-thickness 5' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -i ~/.config/hypr/wallpaper1.png --indicator-thickness 5'")
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
@@ -49,7 +49,7 @@ hl.config({
     border_size = 2,
 
     col = {
-      active_border   = "rgba(70b6e544)",
+      active_border   = "rgba(55555599)",
       inactive_border = "rgba(00000000)",
     },
 
@@ -71,7 +71,7 @@ hl.config({
       enabled = true,
       range = 20,
       render_power = 10,
-      color = "rgba(70b6e533)",
+      color = "rgba(55555599)",
       color_inactive = "rgba(00000099)",
     },
 
@@ -81,7 +81,13 @@ hl.config({
       passes = 1,
       vibrancy = 0.1696,
     },
+  },
 
+  misc = {
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true,
+    force_default_wallpaper = 0,
+    background_color = "rgb(111111)",
   },
 
   animations = {

@@ -5,12 +5,12 @@
 }
 
 #waybar {
-    color: #9aa5ce;
+    color: #BBBBBB;
     background-color: transparent;
 }
 
 #waybar > box {
-    background-color: rgba(28, 30, 40, 1);
+    background-color: rgba(35, 35, 35, 1);
     margin: 0px 200px 0px 200px;
     border-radius: 0px 0px 40px 40px;
 }
@@ -19,12 +19,12 @@
     all: unset;	
     padding: 0 9px 0 18px;
     margin: 10px 0 10px 10px;
-    background-color: rgb(18, 20, 30);
+    background-color: rgb(17, 17, 17);
     border-radius: 10px;
 }
 
 #workspaces button.active {
-    background-color: #9aa5ce
+    background-color: #BBBBBB
 }
 
 #workspaces button.urgent {
