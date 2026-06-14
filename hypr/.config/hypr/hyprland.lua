@@ -255,7 +255,7 @@ hl.window_rule({
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.40",
-  move        = "monitor_w/40 monitor_h/15",
+  move        = "monitor_w*0.025 monitor_h/15",
 })
 
 hl.window_rule({
@@ -264,7 +264,7 @@ hl.window_rule({
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.40",
-  move        = "monitor_w*0.51 monitor_h/15",
+  move        = "monitor_w*0.515 monitor_h/15",
 })
 
 hl.window_rule({
@@ -273,7 +273,7 @@ hl.window_rule({
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.46",
-  move        = "monitor_w*0.51 monitor_h*0.50",
+  move        = "monitor_w*0.515 monitor_h*0.50",
 })
 
 hl.window_rule({
@@ -282,7 +282,7 @@ hl.window_rule({
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.46",
-  move        = "monitor_w/40 monitor_h*0.50",
+  move        = "monitor_w*0.025 monitor_h*0.50",
 })
 
 hl.window_rule({
