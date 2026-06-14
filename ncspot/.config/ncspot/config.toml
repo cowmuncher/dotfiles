@@ -2,7 +2,7 @@ notify = true
 shuffle = true
 
 [theme]
-background = "#"
+background = "#191919"
 primary = "#BBBBBB"
 secondary = "#444444"
 title = "EEEEEE"
