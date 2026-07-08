@@ -25,7 +25,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
   hl.exec_cmd("sleep 0.5 && kitty --class cava -e cava")
   --hl.exec_cmd("sleep 0.5 && swayimg --class slideshow --slideshow ~/dotfiles/hypr/.config/hypr/slideshow/")
-  hl.exec_cmd("sleep 0.5 && swayimg --class slideshow ~/dotfiles/hypr/.config/hypr/slideshow/image2.png")
+  hl.exec_cmd("sleep 0.5 && swayimg ~/dotfiles/hypr/.config/hypr/slideshow/image2.png")
   hl.exec_cmd("sleep 0.5 && kitty --class btop -e btop")
 end)
 
@@ -271,7 +271,7 @@ hl.window_rule({
 
 hl.window_rule({
   name        = "slideshow",
-  match       = { class = "slideshow" },
+  match       = { class = "swayimg" },
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.46",
