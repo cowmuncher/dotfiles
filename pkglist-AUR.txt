@@ -1,0 +1,3 @@
+brogue-ce
+claude-desktop
+zen-browser-bin

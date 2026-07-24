@@ -41,4 +41,5 @@ wireguard-tools
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
 xorg-xwayland
+yay
 zathura
