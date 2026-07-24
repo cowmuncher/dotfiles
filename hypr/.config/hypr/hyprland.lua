@@ -194,7 +194,23 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 hl.bind("SHIFT + CTRL + S", hl.dsp.exec_cmd("~/Scripts/screenshot.sh"))
 
-hl.bind(mainMod .. " + onehalf", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+local zenMode = false
+
+hl.bind(mainMod .. " + onehalf", function()
+  hl.dispatch(hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+  
+  if not zenMode then
+    hl.config({ general = { gaps_in = 0 } })
+    hl.config({ general = { gaps_out = 0 } })
+    hl.config({ decoration = { shadow = { enabled = false } } })
+    zenMode = true
+  else
+    hl.config({ general = { gaps_in = 5 } })
+    hl.config({ general = { gaps_out = 10 } })
+    hl.config({ decoration = { shadow = { enabled = true } } })
+    zenMode = false
+  end
+end)
 
 -- WINDOWS AND WORKSPACES --
 
