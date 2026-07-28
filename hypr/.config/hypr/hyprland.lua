@@ -24,7 +24,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("swayidle -w timeout 300 'swaylock -f -c 000000 --indicator-thickness 5' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000 --indicator-thickness 5'")
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
   hl.exec_cmd("sleep 0.5 && kitty --class cava -e cava")
-  hl.exec_cmd("sleep 0.5 && kitty")
+  hl.exec_cmd("sleep 0.5 && kitty --class kitty1")
   hl.exec_cmd("sleep 0.5 && kitty --class btop -e btop")
 end)
 
@@ -293,8 +293,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name        = "slideshow",
-  match       = { class = "swayimg" },
+  name        = "kitty",
+  match       = { class = "kitty1" },
   workspace   = 1,
   float       = true,
   size        = "monitor_w*0.46 monitor_h*0.46",
