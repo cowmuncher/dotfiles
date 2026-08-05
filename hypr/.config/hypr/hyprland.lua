@@ -219,6 +219,7 @@ hl.bind(mainMod .. " + onehalf", function()
   end
 end)
 
+
 -- WINDOWS AND WORKSPACES --
 
 local suppressMaximizeRule = hl.window_rule({
