@@ -201,6 +201,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 hl.bind("SHIFT + CTRL + S", hl.dsp.exec_cmd("~/Scripts/screenshot.sh"))
 
+
 local zenMode = false
 
 hl.bind(mainMod .. " + onehalf", function()
