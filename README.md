@@ -1,4 +1,4 @@
- # Bing bing bong
+ # Bing bing bong bong
   
 1. Clone repo and stow dotfiles
 2. cat pkglist.txt | sudo pacman -S // Install packages
