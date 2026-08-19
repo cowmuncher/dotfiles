@@ -66,11 +66,7 @@ hl.config({
     inactive_opacity = 1.0,
 
     shadow = {
-      enabled = true,
-      range = 10,
-      render_power = 10,
-      color = "rgba(55555580)",
-      color_inactive = "rgba(00000099)",
+      enabled = false,
     },
 
     blur = {
@@ -265,14 +261,12 @@ hl.bind(mainMod .. " + onehalf", function()
   if not zenMode then
     hl.config({ general = { gaps_in = 0 } })
     hl.config({ general = { gaps_out = 0 } })
-    hl.config({ decoration = { shadow = { enabled = false } } })
     zenMode = true
     hl.device({ name = "etps/2-elantech-touchpad", enabled = false })
     hl.config({ cursor = { invisible = true } })
   else
     hl.config({ general = { gaps_in = 5 } })
     hl.config({ general = { gaps_out = 10 } })
-    hl.config({ decoration = { shadow = { enabled = true } } })
     zenMode = false
     hl.device({ name = "etps/2-elantech-touchpad", enabled = true })
     hl.config({ cursor = { invisible = false } })
@@ -311,7 +305,6 @@ hl.window_rule({
     float     = true,
 })
 
--- CHECK SYNTAX! --
 hl.window_rule({
   name        = "float-misc-class",
   match       = { class = "(org.pulseaudio.pavucontrol|blueman-manager)" },
@@ -381,4 +374,9 @@ hl.layer_rule({
   name        = "rofi-blur",
   match       = { namespace = "rofi" },
   blur        = true,
+})
+
+hl.workspace_rule({
+  workspace   = "w[1]",
+  no_border   = true
 })
