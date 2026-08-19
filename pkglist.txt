@@ -21,12 +21,12 @@ pavucontrol
 pipewire
 python
 qbittorrent
-ranger
 rofi
 signal-desktop
 slurp
 smartmontools
 steam
+superfile
 swaybg
 swayidle
 swayimg

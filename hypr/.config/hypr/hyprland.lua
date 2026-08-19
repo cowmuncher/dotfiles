@@ -11,7 +11,7 @@ hl.monitor({
 -- MY PROGRAMS --
 
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "kitty spf"
 local menu        = "rofi -show drun"
 
 
