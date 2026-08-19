@@ -32,7 +32,6 @@ swayidle
 swayimg
 swaylock
 tailscale
-thunar
 ttf-input
 ttf-jetbrains-mono
 waybar
