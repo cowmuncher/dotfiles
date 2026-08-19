@@ -1,7 +1,6 @@
 * {
-    /*font-family: 'Input Mono', monospace;*/
-    font-family: 'Perfect DOS VGA 437', monospace;
-    font-size: 16px;
+    font-family: 'JetBrainsMono Nerd Font', Monospace;
+    font-size: 1em;
 }
 
 #waybar {
@@ -10,17 +9,18 @@
 }
 
 #waybar > box {
-    background-color: rgba(35, 35, 35, 1);
-    margin: 0px 200px 0px 200px;
-    border-radius: 0px 0px 40px 40px;
+    background-color: #191919;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #workspaces button {
     all: unset;	
-    padding: 0 9px 0 18px;
-    margin: 10px 0 10px 10px;
+    padding: 2px 15px;
+    margin: 15px 2px;
     background-color: rgb(17, 17, 17);
-    border-radius: 10px;
+    border-radius: 0px;
+    font-size: 0px;
 }
 
 #workspaces button.active {
@@ -31,17 +31,19 @@
     background-color: #eb4d4b;
 }
 
-#workspaces,
+#workspaces {
+    margin-left: 50px; 
+}
+
 #custom-wireguard {
-   margin-left: 20px;
+    margin-left: 50px;
 }
 
 #clock,
 #battery,
 #network,
 #pulseaudio {
-    padding: 10px 12px;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 #battery.critical:not(.charging) {

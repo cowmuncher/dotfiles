@@ -7,14 +7,14 @@
     // Modules placement
     "modules-left": [
         "hyprland/workspaces",
-    	"custom/wireguard"
+        "custom/wireguard"
     ],
     "modules-center": [
-    	"hyprland/window"
+        "hyprland/window"
     ],
     "modules-right": [
-        "pulseaudio",
         "network",
+        "pulseaudio",
         "battery",
         "clock",
     ],
@@ -35,17 +35,18 @@
     
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d/%m/%Y}"
     },
     "battery": {
         "states": { "warning": 30, "critical": 15 },
-        "format": "BAT: {capacity}%",
-        "format-full": "BAT: {capacity}%",
-        "format-charging": "BAT: {capacity}%",
-        "format-plugged": "BAT: {capacity}%",
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": "{icon}  {capacity}%",
+        "format-plugged": "{icon}  {capacity}%",
+        "format-icons": ["", "", "", "", ""] 
     },
     "network": {
-        "format-wifi": "WiFi: {essid}",
+        "format-wifi": "  {essid}",
         "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
@@ -53,13 +54,18 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "VOL: {volume}%",
-        "format-bluetooth": "VOL: {volume}%",
-        "format-bluetooth-muted": "VOL: 0%",
-        "format-muted": "VOL: 0%",
-        "format-source": "",
-        "format-source-muted": "",
-    	"tooltip": false,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "default": ["", ""]
+        },
+        "tooltip": false,
         "on-click": "pavucontrol",
     },
 }
