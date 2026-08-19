@@ -150,15 +150,72 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + B", hl.dsp.layout("togglesplit"))
 
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
-
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J",  hl.dsp.focus({ direction = "down" }))
+
+-- Focuses the last window on the previous workspace if the first window on the 
+-- current workspace is already focused
+hl.bind(mainMod .. " + H", function()
+  local activeWin = hl.get_active_window()
+  local activeWork = hl.get_active_workspace()
+  local windows = hl.get_workspace_windows(activeWork.id)
+  local windowAts = {}
+
+  for i = 1,#windows do
+    table.insert(windowAts, windows[i].at.x)
+  end
+
+  table.sort(windowAts)
+   
+  if activeWin.at.x > windowAts[1] then
+    hl.dispatch(hl.dsp.focus({ direction = "left" }))
+  else
+    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+
+    activeWin = hl.get_active_window()
+    activeWork = hl.get_active_workspace()
+    windows = hl.get_workspace_windows(activeWork.id)
+
+    for i = 1,#windows do
+      if activeWin.at.x < windows[i].at.x then
+        hl.dispatch(hl.dsp.focus({ direction = "right" }))
+        activeWin = hl.get_active_window()
+      end
+    end
+  end
+end)
+
+-- Focuses the first window on the next workspace if the last window on the 
+-- current workspace is already focused
+hl.bind(mainMod .. " + L", function()
+  local activeWin = hl.get_active_window()
+  local activeWork = hl.get_active_workspace()
+  local windows = hl.get_workspace_windows(activeWork.id)
+  local windowAts = {}
+
+  for i = 1,#windows do
+    table.insert(windowAts, windows[i].at.x)
+  end
+
+  table.sort(windowAts)
+   
+  if activeWin.at.x < windowAts[#windowAts] then
+    hl.dispatch(hl.dsp.focus({ direction = "right" }))
+  else
+    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+
+    activeWin = hl.get_active_window()
+    activeWork = hl.get_active_workspace()
+    windows = hl.get_workspace_windows(activeWork.id)
+
+    for i = 1,#windows do
+      if activeWin.at.x > windows[i].at.x then
+        hl.dispatch(hl.dsp.focus({ direction = "left" }))
+        activeWin = hl.get_active_window()
+      end
+    end
+  end
+end)
 
 for i = 1, 10 do
   local key = i % 10
@@ -175,20 +232,10 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("CTRL + SHIFT + left",  hl.dsp.window.resize({ x = -50, y = 0,   relative = true }), { repeating = true })
-hl.bind("CTRL + SHIFT + right", hl.dsp.window.resize({ x = 50,  y = 0,   relative = true }), { repeating = true })
-hl.bind("CTRL + SHIFT + up",    hl.dsp.window.resize({ x = 0,   y = -50, relative = true }), { repeating = true })
-hl.bind("CTRL + SHIFT + down",  hl.dsp.window.resize({ x = 0,   y = 50,  relative = true }), { repeating = true })
-
 hl.bind("CTRL + SHIFT + H", hl.dsp.window.resize({ x = -50, y = 0,   relative = true }), { repeating = true })
 hl.bind("CTRL + SHIFT + L", hl.dsp.window.resize({ x = 50,  y = 0,   relative = true }), { repeating = true })
 hl.bind("CTRL + SHIFT + K", hl.dsp.window.resize({ x = 0,   y = -50, relative = true }), { repeating = true })
 hl.bind("CTRL + SHIFT + J", hl.dsp.window.resize({ x = 0,   y = 50,  relative = true }), { repeating = true })
-
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
