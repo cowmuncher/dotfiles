@@ -32,8 +32,6 @@ end)
 -- ENVIRONMENT VARIABLES --
 
 hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-
 
 -- PERMISSIONS --
 
@@ -222,11 +220,15 @@ hl.bind(mainMod .. " + onehalf", function()
     hl.config({ general = { gaps_out = 0 } })
     hl.config({ decoration = { shadow = { enabled = false } } })
     zenMode = true
+    hl.device({ name = "etps/2-elantech-touchpad", enabled = false })
+    hl.config({ cursor = { invisible = true } })
   else
     hl.config({ general = { gaps_in = 5 } })
     hl.config({ general = { gaps_out = 10 } })
     hl.config({ decoration = { shadow = { enabled = true } } })
     zenMode = false
+    hl.device({ name = "etps/2-elantech-touchpad", enabled = true })
+    hl.config({ cursor = { invisible = false } })
   end
 end)
 
