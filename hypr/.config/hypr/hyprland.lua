@@ -170,8 +170,8 @@ hl.bind(mainMod .. " + H", function()
   end
 
   table.sort(windowAts)
-   
-  if activeWin.at.x > windowAts[1] then
+
+  if activeWin and activeWin.at.x > windowAts[1] then
     hl.dispatch(hl.dsp.focus({ direction = "left" }))
   else
     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
@@ -203,7 +203,7 @@ hl.bind(mainMod .. " + L", function()
 
   table.sort(windowAts)
    
-  if activeWin.at.x < windowAts[#windowAts] then
+  if activeWin and activeWin.at.x < windowAts[#windowAts] then
     hl.dispatch(hl.dsp.focus({ direction = "right" }))
   else
     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
