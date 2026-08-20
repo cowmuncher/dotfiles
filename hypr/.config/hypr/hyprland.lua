@@ -155,7 +155,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle"}))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + B", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("swaylock -f -c 000000 --indicator-thickness 5"))
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("swaylock -f -c 000000 --indicator-thickness 5"))
 
 hl.bind(mainMod .. " + K",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J",  hl.dsp.focus({ direction = "down" }))
