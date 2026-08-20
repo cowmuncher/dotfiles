@@ -19,13 +19,21 @@ local menu        = "rofi -show drun"
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
-  --hl.exec_cmd("swaybg -i ~/.config/hypr/wallpaper1.png -m fill")
   hl.exec_cmd("lxqt-policykit-agent")
   hl.exec_cmd("swayidle -w timeout 300 'swaylock -f -c 000000 --indicator-thickness 5' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000 --indicator-thickness 5'")
   hl.exec_cmd("sleep 0.5 && kitty --class ncspot -e ncspot")
   hl.exec_cmd("sleep 0.5 && kitty --class cava -e cava")
-  hl.exec_cmd("sleep 0.5 && kitty --class kitty1")
   hl.exec_cmd("sleep 0.5 && kitty --class btop -e btop")
+end)
+
+hl.on("window.open", function(w) 
+  if w.class == "ncspot" then
+    hl.dispatch(hl.dsp.layout("swapwithmaster ignoremaster"))
+  elseif w.class == "btop" then
+    hl.dispatch(hl.dsp.layout("addmaster"))
+  elseif w.class == "cava" then
+    hl.exec_cmd("kitty --class kitty1")
+  end
 end)
 
 
@@ -102,10 +110,10 @@ hl.config({
 
 hl.config({
   master = {
-    new_status = "master",
+    allow_small_split = true,
+    mfact = 0.5,
   },
 })
-
 
 -- MISC --
 
@@ -330,44 +338,8 @@ hl.window_rule({
 
 hl.window_rule({
   name        = "ncspot",
-  match       = { class = "ncspot" },
+  match       = { class = "(ncspot|cava|kitty1|btop)" },
   workspace   = 1,
-  float       = true,
-  size        = "monitor_w*0.46 monitor_h*0.40",
-  move        = "monitor_w*0.025 monitor_h/15",
-})
-
-hl.window_rule({
-  name        = "cava",
-  match       = { class = "cava" },
-  workspace   = 1,
-  float       = true,
-  size        = "monitor_w*0.46 monitor_h*0.40",
-  move        = "monitor_w*0.515 monitor_h/15",
-})
-
-hl.window_rule({
-  name        = "kitty",
-  match       = { class = "kitty1" },
-  workspace   = 1,
-  float       = true,
-  size        = "monitor_w*0.46 monitor_h*0.46",
-  move        = "monitor_w*0.515 monitor_h*0.50",
-})
-
-hl.window_rule({
-  name        = "btop",
-  match       = { class = "btop" },
-  workspace   = 1,
-  float       = true,
-  size        = "monitor_w*0.46 monitor_h*0.46",
-  move        = "monitor_w*0.025 monitor_h*0.50",
-})
-
-hl.window_rule({
-  name        = "float-workspace1",
-  match       = { workspace = 1 },
-  float       = true,
 })
 
 hl.layer_rule({
@@ -377,6 +349,13 @@ hl.layer_rule({
 })
 
 hl.workspace_rule({
+  workspace   = "1",
+  layout      = "master",
+  gaps_in     = 20,
+  gaps_out    = 20,
+})
+
+hl.workspace_rule({
   workspace   = "w[1]",
-  no_border   = true
+  no_border   = true,
 })
