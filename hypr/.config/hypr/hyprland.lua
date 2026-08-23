@@ -32,7 +32,7 @@ hl.on("window.open", function(w)
   elseif w.class == "btop" then
     hl.dispatch(hl.dsp.layout("addmaster"))
   elseif w.class == "cava" then
-    hl.exec_cmd("kitty --class kitty1")
+    hl.exec_cmd("kitty --class calcure -e calcure")
   end
 end)
 
@@ -236,6 +236,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.focus({ workspace = "empty" }))
+
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -244,10 +246,75 @@ hl.bind("CTRL + SHIFT + L", hl.dsp.window.resize({ x = 50,  y = 0,   relative = 
 hl.bind("CTRL + SHIFT + K", hl.dsp.window.resize({ x = 0,   y = -50, relative = true }), { repeating = true })
 hl.bind("CTRL + SHIFT + J", hl.dsp.window.resize({ x = 0,   y = 50,  relative = true }), { repeating = true })
 
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+
+-- Moves the focused window to the previous workspace if it
+-- is the first window on the current workspace
+hl.bind(mainMod .. " + SHIFT + H", function()
+  local activeWin = hl.get_active_window()
+  local activeWork = hl.get_active_workspace()
+  local windows = hl.get_workspace_windows(activeWork.id)
+  local windowAts = {}
+
+  for i = 1,#windows do
+    table.insert(windowAts, windows[i].at.x)
+  end
+
+  table.sort(windowAts)
+
+  if activeWin and activeWin.at.x > windowAts[1] then
+    hl.dispatch(hl.dsp.window.move({ direction = "left" }))
+  else
+    hl.dispatch(hl.dsp.window.move({ workspace = "e-1" }))
+
+    activeWork = hl.get_active_workspace()
+    windows = hl.get_workspace_windows(activeWork.id)
+
+    for i = 1,#windows do
+      if activeWin.at.x < windows[i].at.x then
+        hl.dispatch(hl.dsp.window.move({ direction = "right" }))
+      end
+    end
+  end
+end)
+
+-- Moves the focused window to the next workspace if it
+-- is the last window on the current workspace
+hl.bind(mainMod .. " + SHIFT + L", function()
+  local activeWin = hl.get_active_window()
+  local activeWork = hl.get_active_workspace()
+  local windows = hl.get_workspace_windows(activeWork.id)
+  local windowAts = {}
+
+  for i = 1,#windows do
+    table.insert(windowAts, windows[i].at.x)
+  end
+
+  table.sort(windowAts)
+
+  if activeWin and activeWin.at.x < windowAts[#windowAts] then
+    hl.dispatch(hl.dsp.window.move({ direction = "right" }))
+  else
+    hl.dispatch(hl.dsp.window.move({ workspace = "e+1" }))
+
+    activeWork = hl.get_active_workspace()
+    windows = hl.get_workspace_windows(activeWork.id)
+
+    for i = 1,#windows do
+      if activeWin.at.x > windows[i].at.x then
+        hl.dispatch(hl.dsp.window.move({ direction = "left" }))
+      end
+    end
+  end
+end)
+
+hl.bind(mainMod .. " + Z", function()
+  local workspaces = hl.get_workspaces()
+  for i = 1,#workspaces do
+    hl.dispatch(hl.dsp.workspace.change_id({ workspace = workspaces[i].id, id = i }))
+  end
+end)
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
@@ -341,7 +408,7 @@ hl.window_rule({
 
 hl.window_rule({
   name        = "ncspot",
-  match       = { class = "(ncspot|cava|kitty1|btop)" },
+  match       = { class = "(ncspot|cava|btop|calcure)" },
   workspace   = 1,
 })
 
