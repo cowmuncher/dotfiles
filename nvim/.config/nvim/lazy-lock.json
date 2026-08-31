@@ -1,6 +1,9 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "642b0c595e11608b4c18219e93b88d7637af27bc" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
+  "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "luasnip-latex-snippets.nvim": { "branch": "main", "commit": "53d96674d56f8489288e8db9b24c381d422e16a5" },
   "nvim-lspconfig": { "branch": "master", "commit": "16286347bdba1333c7d124d9de9fe6630731b2b2" },
   "vim-moonfly-colors": { "branch": "master", "commit": "261664f92ed51cf0c077555b2d4b2530307eac17" },
   "vimtex": { "branch": "master", "commit": "cb81778aee678b513af3de7f1ca5943e7ee31b2f" }

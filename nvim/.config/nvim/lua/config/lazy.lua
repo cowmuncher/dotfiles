@@ -41,8 +41,10 @@ require("lazy").setup({
   {
     "saghen/blink.cmp",
     version = "*",
+    dependencies = { "L3MON4D3/LuaSnip" },
     opts = {
-      keymap = { preset = "default" },
+      keymap = { preset = "super-tab" },
+      snippets = { preset = "luasnip" },
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
       },
@@ -50,11 +52,26 @@ require("lazy").setup({
   },
   {
     "lervag/vimtex",
-    lazy = false,     -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
+    lazy = false,
     init = function()
-      -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_method = "zathura"
     end
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end,
+  },
+  {
+    "evesdropper/luasnip-latex-snippets.nvim",
+    ft = { "tex", "markdown" },
+    dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    config = function()
+      require("luasnip-latex-snippets")
+    end,
   }
 })
