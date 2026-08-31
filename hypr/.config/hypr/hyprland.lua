@@ -309,10 +309,21 @@ hl.bind(mainMod .. " + SHIFT + L", function()
   end
 end)
 
+-- "Removes" empty workspaces
 hl.bind(mainMod .. " + Z", function()
   local workspaces = hl.get_workspaces()
-  for i = 1,#workspaces do
-    hl.dispatch(hl.dsp.workspace.change_id({ workspace = workspaces[i].id, id = i }))
+  while not (workspaces[#workspaces].id == #workspaces) do
+    for i = 1,(workspaces[#workspaces].id) do
+      if not hl.get_workspace(i) then
+        if hl.get_workspace(i+1) then
+          windows = hl.get_workspace_windows(i+1)
+          for j = 1,#windows do
+            hl.dispatch(hl.dsp.window.move({ workspace = i, window = windows[j] }))
+          end
+        end
+      end
+      workspaces = hl.get_workspaces()
+    end
   end
 end)
 
