@@ -73,5 +73,10 @@ require("lazy").setup({
     config = function()
       require("luasnip-latex-snippets")
     end,
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "^4.0.0",
+    event = "VeryLazy",
   }
 })
