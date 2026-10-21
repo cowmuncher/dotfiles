@@ -11,15 +11,5 @@ vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
 
--- Make background transparent (works in Kitty)
-local groups = {
-  "Normal", "NormalNC", "SignColumn", "NormalFloat", "VertSplit",
-  "StatusLine", "TabLineFill", "Pmenu", "PmenuSbar", "PmenuThumb"
-}
-
-for _, g in ipairs(groups) do
-  vim.api.nvim_set_hl(0, g, { bg = "none" })
-end
-
 -- Plugin manager
 require("config.lazy")
